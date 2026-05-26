@@ -1,4 +1,5 @@
 import { motion as Motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import {
   FaArrowRight,
   FaBrain,
@@ -31,14 +32,20 @@ import {
 
 const reveal = {
   hidden: { opacity: 0, y: 34 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.48, ease: "easeOut" } },
 };
 
 const stats = [
   { value: "4+", label: "Years Experience" },
-  { value: "15", label: "Team Members Led" },
-  { value: "40%", label: "Faster Regression" },
+  { value: "WPF", label: "FlAUI, C#, .NET Automation" },
+  { value: "20", label: "Team Members Led" },
   { value: "RAG", label: "AI Tool Builder" },
+];
+
+const heroStrengths = [
+  "Automation frameworks for WPF, web, and mobile products",
+  "AI-assisted QA workflows using RAG and contextual search",
+  "Release validation across software, hardware, and CI pipelines",
 ];
 
 const experiences = [
@@ -95,6 +102,21 @@ const projects = [
     description:
       "Industrial validation flows for high-precision machine software, CI checks, hardware coordination, and release reliability.",
     tags: ["CI/CD", "Machine Control", "Validation"],
+  },
+];
+
+const toolInsights = [
+  {
+    title: "Automation Core",
+    text: "WPF automation with FlAUI, C#, .NET, reusable locators, and maintainable test engine design.",
+  },
+  {
+    title: "AI Productivity",
+    text: "RAG-based desktop tooling, OpenAI workflows, prompt design, and knowledge retrieval for faster engineering support.",
+  },
+  {
+    title: "Delivery Stack",
+    text: "Selenium, SQL, Jenkins, Jira, Git, and CI checks used to keep releases observable and stable.",
   },
 ];
 
@@ -185,7 +207,52 @@ const education = [
   },
 ];
 
+function CyberBackdrop() {
+  return (
+    <video
+      className="cyber-bg-video"
+      src="/cyber-space-web.mp4"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+    />
+  );
+}
+
 function App() {
+  const skillsRef = useRef(null);
+  const toolsRef = useRef(null);
+  const [activePortal, setActivePortal] = useState({ skills: false, tools: false });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === skillsRef.current) {
+            setActivePortal((current) => ({ ...current, skills: entry.isIntersecting }));
+          }
+          if (entry.target === toolsRef.current) {
+            setActivePortal((current) => ({ ...current, tools: entry.isIntersecting }));
+          }
+        });
+      },
+      { threshold: 0.42 }
+    );
+
+    const skillsNode = skillsRef.current;
+    const toolsNode = toolsRef.current;
+    if (skillsNode) observer.observe(skillsNode);
+    if (toolsNode) observer.observe(toolsNode);
+
+    return () => {
+      if (skillsNode) observer.unobserve(skillsNode);
+      if (toolsNode) observer.unobserve(toolsNode);
+    };
+  }, []);
+
   return (
     <main className="portfolio-shell">
       <nav className="site-nav">
@@ -201,31 +268,38 @@ function App() {
       </nav>
 
       <section id="home" className="panel hero-panel">
-        <div className="space-objects" aria-hidden="true">
-          <span className="planet planet-blue" />
-          <span className="planet planet-ring" />
-          <span className="satellite" />
+        <div className="aurora-scene" aria-hidden="true">
+          <span className="aurora-ribbon ribbon-one" />
+          <span className="aurora-ribbon ribbon-two" />
+          <span className="aurora-ribbon ribbon-three" />
+          <span className="moon-glow" />
+          <span className="mountain mountain-back" />
+          <span className="mountain mountain-front" />
         </div>
-        <div className="background-orb orb-one" />
-        <div className="background-orb orb-two" />
         <div className="hero-feature-strip" aria-hidden="true">
           <span>AI Assisted QA</span>
-          <span>WPF Test Engines</span>
-          <span>Team Leadership</span>
+          <span>WPF Automation</span>
+          <span>Release Confidence</span>
         </div>
         <Motion.div className="hero-grid" initial="hidden" animate="show">
           <Motion.div variants={reveal} className="hero-copy">
             <p className="eyebrow">Automation Team Lead | WPF Automation | AI + RAG Builder</p>
-            <h1>Building futuristic automation engines for real-world testing.</h1>
+            <h1>Building reliable automation for complex products.</h1>
             <p className="hero-text">
-              Automation Engineer with 4+ years across web, mobile, WPF, and industrial validation.
-              Currently at ASM Technology, leading 15 members and building a FlAUI-based WPF automation engine.
+              I help teams ship with confidence by designing automation systems that are maintainable,
+              measurable, and close to real product behavior. My work spans WPF, web, mobile,
+              industrial validation, and AI-assisted QA tooling.
             </p>
+            <div className="hero-proof-list">
+              {heroStrengths.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
             <div className="ai-highlight">
               <FaBrain />
               <div>
-                <strong>WPF RAG Tool</strong>
-                <span>Built an AI-powered desktop knowledge assistant using retrieval workflows, contextual search, and LLM response generation.</span>
+                <strong>Current focus</strong>
+                <span>Leading automation delivery at ASM Technology while building a FlAUI-based WPF engine and a RAG desktop assistant for faster knowledge discovery.</span>
               </div>
             </div>
             <div className="hero-actions">
@@ -253,9 +327,9 @@ function App() {
                 <span className="node node-d">QA</span>
               </div>
               <div className="profile-lines">
-                <p><b>Role</b> Team Lead, Automation Engineer</p>
-                <p><b>Engine</b> WPF + FlAUI + C# + .NET</p>
-                <p><b>AI</b> WPF RAG Tool and automation productivity workflows</p>
+                <p><b>Role</b> Automation Engineer and Team Lead</p>
+                <p><b>Stack</b> WPF, FlAUI, C#, .NET, Selenium, SQL</p>
+                <p><b>Impact</b> Better regression coverage, clearer release checks, faster triage</p>
               </div>
             </div>
           </Motion.div>
@@ -271,7 +345,8 @@ function App() {
         </div>
       </section>
 
-      <section id="experience" className="panel experience-panel">
+      <section id="experience" className="panel experience-panel cyber-video-panel">
+        <CyberBackdrop />
         <div className="space-objects" aria-hidden="true">
           <span className="planet planet-small" />
           <span className="orbit-line" />
@@ -299,9 +374,16 @@ function App() {
             </Motion.article>
           ))}
         </div>
+        <div className="experience-edge-blackhole" aria-hidden="true">
+          <video className="blackhole-video" src="/blackHoleee-2.webm" autoPlay muted loop playsInline />
+        </div>
       </section>
 
-      <section id="projects" className="panel projects-panel">
+      <section id="projects" className="panel projects-panel cyber-video-panel">
+        <CyberBackdrop />
+        <div className="project-edge-blackhole" aria-hidden="true">
+          <video className="blackhole-video" src="/blackHoleee-2.webm" autoPlay muted loop playsInline />
+        </div>
         <div className="space-objects" aria-hidden="true">
           <span className="planet planet-ring project-planet" />
           <span className="satellite project-satellite" />
@@ -325,28 +407,28 @@ function App() {
         </div>
       </section>
 
-      <section id="skills" className="panel skills-panel">
-        <div className="black-hole" aria-hidden="true">
+      <section
+        id="skills"
+        ref={skillsRef}
+        className={`panel skills-panel cyber-video-panel portal-section ${activePortal.skills ? "portal-active" : ""}`}
+      >
+        <CyberBackdrop />
+        <div className="skill-blackhole" aria-hidden="true">
+          <video className="blackhole-video" src="/blackHoleee-2.webm" autoPlay muted loop playsInline />
           <span className="black-hole-core" />
-          <span className="black-hole-ring ring-one" />
-          <span className="black-hole-ring ring-two" />
-          <span className="black-hole-particle particle-one">AI</span>
-          <span className="black-hole-particle particle-two">.NET</span>
-          <span className="black-hole-particle particle-three">QA</span>
-          <span className="black-hole-particle particle-four">C#</span>
-        </div>
-        <div className="skills-visual" aria-hidden="true">
-          <span className="chip chip-one">AI</span>
-          <span className="chip chip-two">.NET</span>
-          <span className="chip chip-three">QA</span>
-          <span className="beam beam-one" />
-          <span className="beam beam-two" />
+          <span className="black-hole-disc disc-one" />
+          <span className="black-hole-disc disc-two" />
+          <span className="black-hole-disc disc-three" />
+          <span className="skill-orb orb-ai">AI</span>
+          <span className="skill-orb orb-net">.NET</span>
+          <span className="skill-orb orb-qa">QA</span>
+          <span className="skill-orb orb-csharp">C#</span>
         </div>
         <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
           <p className="eyebrow">Hover Skill Matrix</p>
           <h2>Move the cursor over a skill card to charge the indicator.</h2>
         </Motion.div>
-        <div className="skill-grid">
+        <div className="skill-grid blackhole-pop-grid">
           {skillGroups.map((group) => (
             <Motion.article className="skill-card" key={group.title} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
               <div className="skill-title">
@@ -369,31 +451,54 @@ function App() {
         </div>
       </section>
 
-      <section id="tools" className="panel tools-panel tech-stack-panel">
-        <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-          <p className="eyebrow">Tech Stack</p>
-          <h2>Automation, AI, and engineering tools I use.</h2>
-        </Motion.div>
-        <div className="logo-constellation">
-          {tools.map((tool) => (
-            <Motion.div
-              className={`tech-logo ${tool.className}`}
-              key={tool.name}
-              whileHover={{ y: -10, scale: 1.08 }}
-            >
-              {tool.icon}
-              <span>{tool.name}</span>
-            </Motion.div>
-          ))}
-          <div className="logo-horizon" aria-hidden="true">
-            <span />
-            <span />
-            <span />
+      <section
+        id="tools"
+        ref={toolsRef}
+        className={`panel tools-panel tech-stack-panel cyber-video-panel portal-section ${activePortal.tools ? "portal-active" : ""}`}
+      >
+        <CyberBackdrop />
+        <div className="tools-layout">
+          <Motion.div className="section-heading tools-copy" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <p className="eyebrow">Skill Tools</p>
+            <h2>Tools arranged around the way I actually build.</h2>
+            <p>
+              My stack is centered on automation quality: stable object discovery, readable test design,
+              CI feedback, data validation, and AI helpers that reduce repeated investigation work.
+            </p>
+            <div className="tool-insights">
+              {toolInsights.map((item) => (
+                <article key={item.title}>
+                  <strong>{item.title}</strong>
+                  <span>{item.text}</span>
+                </article>
+              ))}
+            </div>
+          </Motion.div>
+
+          <div className="logo-constellation">
+            <div className="wormhole-visual" aria-hidden="true">
+              <video className="tool-matrix-video" src="/blackHole-card-1.webm" autoPlay muted loop playsInline />
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            {tools.map((tool) => (
+              <Motion.div
+                className={`tech-logo ${tool.className}`}
+                key={tool.name}
+                whileHover={{ y: -8, scale: 1.06 }}
+              >
+                {tool.icon}
+                <span>{tool.name}</span>
+              </Motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="education" className="panel education-panel">
+      <section id="education" className="panel education-panel cyber-video-panel">
+        <CyberBackdrop />
         <div className="education-visual" aria-hidden="true">
           <span className="person person-one" />
           <span className="person person-two" />
@@ -420,7 +525,8 @@ function App() {
         </div>
       </section>
 
-      <section id="contact" className="panel contact-panel">
+      <section id="contact" className="panel contact-panel cyber-video-panel">
+        <CyberBackdrop />
         <div className="contact-visual" aria-hidden="true">
           <span />
           <span />
