@@ -31,49 +31,49 @@ import {
 } from "react-icons/si";
 
 const reveal = {
-  hidden: { opacity: 0, y: 34 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.48, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const stats = [
-  { value: "4+", label: "Years Experience" },
-  { value: "WPF", label: "FlAUI, C#, .NET Automation" },
-  { value: "20", label: "Team Members Led" },
-  { value: "RAG", label: "AI Tool Builder" },
+  { value: "4+", label: "Years in QA Automation" },
+  { value: "15", label: "Engineers Led" },
+  { value: "FlAUI", label: "WPF Test Engine" },
+  { value: "RAG", label: "AI Assistant Built" },
 ];
 
 const heroStrengths = [
-  "Automation frameworks for WPF, web, and mobile products",
-  "AI-assisted QA workflows using RAG and contextual search",
-  "Release validation across software, hardware, and CI pipelines",
+  "Leading a 15-engineer automation team for mission-critical manufacturing software",
+  "Built a FlAUI + .NET test engine that drives production release validation",
+  "Shipped a RAG desktop assistant that compresses investigation from hours to minutes",
 ];
 
 const experiences = [
   {
     company: "ASM Technology Pvt Ltd",
-    role: "Automation Engineer and Team Lead",
-    period: "Jul 2024 - Present",
+    role: "Automation Engineer & Team Lead",
+    period: "Jul 2024 — Present",
     icon: <FaUsers />,
     logo: "/logos/asm-technologies.avif",
     logoAlt: "ASM Technologies logo",
     points: [
-      "Leading a 15-member automation team for mission-critical manufacturing software.",
-      "Created a WPF automation test engine using FlAUI, C#, .NET, and MVVM workflows.",
-      "Validating hardware-software integration, gantry movement, laser machine workflows, and CI pipelines.",
-      "Collaborating with software, hardware, and embedded teams to improve release stability.",
+      "Lead a 15-engineer automation team owning release validation for precision manufacturing software.",
+      "Designed a reusable WPF automation engine on FlAUI, C#, .NET and MVVM that replaced fragile script-based suites.",
+      "Drive hardware-software integration testing across gantry motion, laser machines and CI pipelines.",
+      "Partner with software, hardware and embedded teams to raise release confidence and cut regression time.",
     ],
   },
   {
     company: "CARS24 Service Private Limited",
     role: "QA Engineer",
-    period: "Aug 2021 - Aug 2024",
+    period: "Aug 2021 — Aug 2024",
     icon: <FaBug />,
     logo: "/logos/dsce.webp",
     logoAlt: "CARS24 logo",
     points: [
-      "Validated enterprise web and mobile systems across documents, approvals, cost flows, and secure data handling.",
-      "Built scalable test suites and regression workflows to support faster release cycles.",
-      "Worked with product, development, QA, and DevOps teams to reduce production defects through faster triage.",
+      "Validated enterprise web and mobile flows across documents, approvals, cost pipelines and secure data handling.",
+      "Built scalable regression suites that supported faster release cadence without sacrificing coverage.",
+      "Worked cross-functionally with product, dev, QA and DevOps to shrink triage time and reduce production defects.",
     ],
   },
 ];
@@ -84,15 +84,15 @@ const projects = [
     type: "ASM Technology",
     icon: <FaWindows />,
     description:
-      "A reusable automation engine for WPF apps using FlAUI, C#, .NET, MVVM patterns, object locators, and component validation.",
+      "A reusable automation engine for WPF applications built on FlAUI, C# and .NET — MVVM-aware, locator-driven, and designed to outlive UI churn.",
     tags: ["WPF", "FlAUI", ".NET", "MVVM"],
   },
   {
-    title: "WPF RAG Tool",
+    title: "WPF RAG Assistant",
     type: "AI Project",
     icon: <FaBrain />,
     description:
-      "A desktop AI assistant that uses retrieval workflows, contextual search, and LLM response generation to speed up knowledge discovery.",
+      "A desktop AI assistant that retrieves context from internal docs and code, then uses an LLM to answer engineering questions in seconds instead of hours.",
     tags: ["RAG", "OpenAI", "WPF", "AI"],
   },
   {
@@ -100,7 +100,7 @@ const projects = [
     type: "Industrial Automation",
     icon: <FaCogs />,
     description:
-      "Industrial validation flows for high-precision machine software, CI checks, hardware coordination, and release reliability.",
+      "End-to-end validation flows for high-precision machine software — CI checks, hardware coordination, and release-readiness signals teams actually trust.",
     tags: ["CI/CD", "Machine Control", "Validation"],
   },
 ];
@@ -108,21 +108,21 @@ const projects = [
 const toolInsights = [
   {
     title: "Automation Core",
-    text: "WPF automation with FlAUI, C#, .NET, reusable locators, and maintainable test engine design.",
+    text: "WPF automation on FlAUI, C# and .NET — reusable locators, MVVM-aware patterns, and a test engine built to last.",
   },
   {
     title: "AI Productivity",
-    text: "RAG-based desktop tooling, OpenAI workflows, prompt design, and knowledge retrieval for faster engineering support.",
+    text: "RAG desktop tooling, OpenAI workflows, prompt design and knowledge retrieval that takes load off engineers.",
   },
   {
     title: "Delivery Stack",
-    text: "Selenium, SQL, Jenkins, Jira, Git, and CI checks used to keep releases observable and stable.",
+    text: "Selenium, SQL, Jenkins, Jira and Git — wired into CI checks that keep releases observable and stable.",
   },
 ];
 
 const skillGroups = [
   {
-    title: "AI and Intelligent Systems",
+    title: "AI & Intelligent Systems",
     icon: <SiOpenai />,
     skills: [
       { name: "RAG Workflows", level: 88 },
@@ -132,7 +132,7 @@ const skillGroups = [
     ],
   },
   {
-    title: "Desktop and Automation",
+    title: "Desktop & Automation",
     icon: <FaRobot />,
     skills: [
       { name: "WPF Automation", level: 92 },
@@ -173,7 +173,7 @@ const tools = [
   { icon: <SiOpenai />, name: "ChatGPT", className: "logo-chatgpt" },
   { icon: <FaRobot />, name: "Codex", className: "logo-codex" },
   { icon: <FaBrain />, name: "Antigravity", className: "logo-antigravity" },
-  { icon: <FaLayerGroup />, name: "Ollama Local Models", className: "logo-ollama" },
+  { icon: <FaLayerGroup />, name: "Ollama", className: "logo-ollama" },
 ];
 
 const education = [
@@ -207,350 +207,336 @@ const education = [
   },
 ];
 
-function CyberBackdrop() {
+function BackgroundLayer({ heroVisible, showCyber }) {
   return (
-    <video
-      className="cyber-bg-video"
-      src="/cyber-space-web.mp4"
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      aria-hidden="true"
-    />
+    <div className="bg-layer" aria-hidden="true">
+      <video
+        className={`bg-video bg-aurora ${heroVisible ? "is-active" : ""}`}
+        src="/northern-lights.mp4"
+        poster="/aurora-hero.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      />
+      {showCyber && (
+        <video
+          className={`bg-video bg-cyber ${heroVisible ? "" : "is-active"}`}
+          src="/cyber-space.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+      )}
+      <div className="bg-overlay" />
+    </div>
   );
 }
 
 function App() {
+  const heroRef = useRef(null);
   const skillsRef = useRef(null);
   const toolsRef = useRef(null);
+  const [heroVisible, setHeroVisible] = useState(true);
+  const [showCyber, setShowCyber] = useState(false);
   const [activePortal, setActivePortal] = useState({ skills: false, tools: false });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        setHeroVisible(entry.isIntersecting);
+        if (!entry.isIntersecting) setShowCyber(true);
+      },
+      { threshold: 0.2 }
+    );
+    const portalObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.target === skillsRef.current) {
-            setActivePortal((current) => ({ ...current, skills: entry.isIntersecting }));
+            setActivePortal((c) => ({ ...c, skills: entry.isIntersecting }));
           }
           if (entry.target === toolsRef.current) {
-            setActivePortal((current) => ({ ...current, tools: entry.isIntersecting }));
+            setActivePortal((c) => ({ ...c, tools: entry.isIntersecting }));
           }
         });
       },
       { threshold: 0.42 }
     );
 
+    const heroNode = heroRef.current;
     const skillsNode = skillsRef.current;
     const toolsNode = toolsRef.current;
-    if (skillsNode) observer.observe(skillsNode);
-    if (toolsNode) observer.observe(toolsNode);
+    if (heroNode) heroObserver.observe(heroNode);
+    if (skillsNode) portalObserver.observe(skillsNode);
+    if (toolsNode) portalObserver.observe(toolsNode);
 
     return () => {
-      if (skillsNode) observer.unobserve(skillsNode);
-      if (toolsNode) observer.unobserve(toolsNode);
+      heroObserver.disconnect();
+      portalObserver.disconnect();
     };
   }, []);
 
   return (
-    <main className="portfolio-shell">
-      <nav className="site-nav">
-        <a className="brand" href="#home">Subramanya N</a>
-        <div className="nav-links">
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#tools">Tools</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+    <>
+      <BackgroundLayer heroVisible={heroVisible} showCyber={showCyber} />
 
-      <section id="home" className="panel hero-panel">
-        <div className="aurora-scene" aria-hidden="true">
-          <span className="aurora-ribbon ribbon-one" />
-          <span className="aurora-ribbon ribbon-two" />
-          <span className="aurora-ribbon ribbon-three" />
-          <span className="moon-glow" />
-          <span className="mountain mountain-back" />
-          <span className="mountain mountain-front" />
-        </div>
-        <div className="hero-feature-strip" aria-hidden="true">
-          <span>AI Assisted QA</span>
-          <span>WPF Automation</span>
-          <span>Release Confidence</span>
-        </div>
-        <Motion.div className="hero-grid" initial="hidden" animate="show">
-          <Motion.div variants={reveal} className="hero-copy">
-            <p className="eyebrow">Automation Team Lead | WPF Automation | AI + RAG Builder</p>
-            <h1>Building reliable automation for complex products.</h1>
-            <p className="hero-text">
-              I help teams ship with confidence by designing automation systems that are maintainable,
-              measurable, and close to real product behavior. My work spans WPF, web, mobile,
-              industrial validation, and AI-assisted QA tooling.
-            </p>
-            <div className="hero-proof-list">
-              {heroStrengths.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-            <div className="ai-highlight">
-              <FaBrain />
-              <div>
-                <strong>Current focus</strong>
-                <span>Leading automation delivery at ASM Technology while building a FlAUI-based WPF engine and a RAG desktop assistant for faster knowledge discovery.</span>
-              </div>
-            </div>
-            <div className="hero-actions">
-              <a className="primary-btn" href="#projects">
-                Explore Work <FaArrowRight />
-              </a>
-              <a className="ghost-btn" href="#contact">Contact Me</a>
-            </div>
-          </Motion.div>
+      <main className="portfolio-shell">
+        <nav className="site-nav">
+          <a className="brand" href="#home">Subramanya N</a>
+          <div className="nav-links">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#tools">Tools</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
 
-          <Motion.div variants={reveal} className="holo-card">
-            <div className="holo-screen">
-              <span className="scan-line" />
-              <div className="screen-top">
-                <span />
-                <span />
-                <span />
-                <p>Automation Core</p>
-              </div>
-              <div className="circuit-visual">
-                <div className="core-node"><FaRobot /></div>
-                <span className="node node-a">WPF</span>
-                <span className="node node-b">AI</span>
-                <span className="node node-c">CI</span>
-                <span className="node node-d">QA</span>
-              </div>
-              <div className="profile-lines">
-                <p><b>Role</b> Automation Engineer and Team Lead</p>
-                <p><b>Stack</b> WPF, FlAUI, C#, .NET, Selenium, SQL</p>
-                <p><b>Impact</b> Better regression coverage, clearer release checks, faster triage</p>
-              </div>
-            </div>
-          </Motion.div>
-        </Motion.div>
-
-        <div className="stats-row">
-          {stats.map((stat) => (
-            <Motion.div className="stat-card" key={stat.label} whileHover={{ y: -8 }}>
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </Motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section id="experience" className="panel experience-panel cyber-video-panel">
-        <CyberBackdrop />
-        <div className="space-objects" aria-hidden="true">
-          <span className="planet planet-small" />
-          <span className="orbit-line" />
-        </div>
-        <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-          <p className="eyebrow">Professional Experience</p>
-          <h2>Leadership, delivery, and automation engineering.</h2>
-        </Motion.div>
-        <div className="experience-list">
-          {experiences.map((item) => (
-            <Motion.article className="experience-card" key={item.company} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
-              <div className="experience-meta">
-                <span className="company-logo">
-                  <img src={item.logo} alt={item.logoAlt} />
-                </span>
-                <p>{item.period}</p>
-                <h3>{item.role}</h3>
-                <strong>{item.company}</strong>
-              </div>
-              <div className="experience-points">
-                {item.points.map((point) => (
-                  <p key={point}>{point}</p>
+        <section id="home" ref={heroRef} className="panel hero-panel">
+          <Motion.div className="hero-grid" initial="hidden" animate="show">
+            <Motion.div variants={reveal} className="hero-copy">
+              <p className="eyebrow">Automation Team Lead · AI + RAG Builder · Bangalore</p>
+              <h1>Shipping reliable automation, powered by AI.</h1>
+              <p className="hero-text">
+                I lead a 15-engineer automation team building the systems that keep precision
+                manufacturing software stable in production. My work blends WPF test engines,
+                CI validation and AI-assisted QA tooling that compresses days of investigation
+                into minutes.
+              </p>
+              <div className="hero-proof-list">
+                {heroStrengths.map((item) => (
+                  <span key={item}>{item}</span>
                 ))}
               </div>
-            </Motion.article>
-          ))}
-        </div>
-        <div className="experience-edge-blackhole" aria-hidden="true">
-          <video className="blackhole-video" src="/blackHoleee-2.webm" autoPlay muted loop playsInline />
-        </div>
-      </section>
-
-      <section id="projects" className="panel projects-panel cyber-video-panel">
-        <CyberBackdrop />
-        <div className="project-edge-blackhole" aria-hidden="true">
-          <video className="blackhole-video" src="/blackHoleee-2.webm" autoPlay muted loop playsInline />
-        </div>
-        <div className="space-objects" aria-hidden="true">
-          <span className="planet planet-ring project-planet" />
-          <span className="satellite project-satellite" />
-        </div>
-        <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-          <p className="eyebrow">Highlighted Projects</p>
-          <h2>Systems that show automation thinking, not just test scripts.</h2>
-        </Motion.div>
-        <div className="project-grid">
-          {projects.map((project) => (
-            <Motion.article className="project-card" key={project.title} whileHover={{ y: -10 }} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <span className="project-icon">{project.icon}</span>
-              <p>{project.type}</p>
-              <h3>{project.title}</h3>
-              <span>{project.description}</span>
-              <div>
-                {project.tags.map((tag) => <small key={tag}>{tag}</small>)}
-              </div>
-            </Motion.article>
-          ))}
-        </div>
-      </section>
-
-      <section
-        id="skills"
-        ref={skillsRef}
-        className={`panel skills-panel cyber-video-panel portal-section ${activePortal.skills ? "portal-active" : ""}`}
-      >
-        <CyberBackdrop />
-        <div className="skill-blackhole" aria-hidden="true">
-          <video className="blackhole-video" src="/blackHoleee-2.webm" autoPlay muted loop playsInline />
-          <span className="black-hole-core" />
-          <span className="black-hole-disc disc-one" />
-          <span className="black-hole-disc disc-two" />
-          <span className="black-hole-disc disc-three" />
-          <span className="skill-orb orb-ai">AI</span>
-          <span className="skill-orb orb-net">.NET</span>
-          <span className="skill-orb orb-qa">QA</span>
-          <span className="skill-orb orb-csharp">C#</span>
-        </div>
-        <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-          <p className="eyebrow">Hover Skill Matrix</p>
-          <h2>Move the cursor over a skill card to charge the indicator.</h2>
-        </Motion.div>
-        <div className="skill-grid blackhole-pop-grid">
-          {skillGroups.map((group) => (
-            <Motion.article className="skill-card" key={group.title} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <div className="skill-title">
-                <span>{group.icon}</span>
-                <h3>{group.title}</h3>
-              </div>
-              {group.skills.map((skill) => (
-                <div className="skill-row" key={skill.name} style={{ "--level": `${skill.level}%` }}>
-                  <div className="skill-info">
-                    <strong>{skill.name}</strong>
-                    <em>{skill.level}%</em>
-                  </div>
-                  <div className="skill-track">
-                    <span />
-                  </div>
+              <div className="ai-highlight">
+                <FaBrain />
+                <div>
+                  <strong>Currently building</strong>
+                  <span>A FlAUI-based WPF test engine and a RAG desktop assistant — turning institutional knowledge into instant, queryable answers for engineers.</span>
                 </div>
-              ))}
-            </Motion.article>
-          ))}
-        </div>
-      </section>
+              </div>
+              <div className="hero-actions">
+                <a className="primary-btn" href="#projects">
+                  Explore Work <FaArrowRight />
+                </a>
+                <a className="ghost-btn" href="#contact">Get in Touch</a>
+              </div>
+            </Motion.div>
 
-      <section
-        id="tools"
-        ref={toolsRef}
-        className={`panel tools-panel tech-stack-panel cyber-video-panel portal-section ${activePortal.tools ? "portal-active" : ""}`}
-      >
-        <CyberBackdrop />
-        <div className="tools-layout">
-          <Motion.div className="section-heading tools-copy" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-            <p className="eyebrow">Skill Tools</p>
-            <h2>Tools arranged around the way I actually build.</h2>
-            <p>
-              My stack is centered on automation quality: stable object discovery, readable test design,
-              CI feedback, data validation, and AI helpers that reduce repeated investigation work.
-            </p>
-            <div className="tool-insights">
-              {toolInsights.map((item) => (
-                <article key={item.title}>
-                  <strong>{item.title}</strong>
-                  <span>{item.text}</span>
-                </article>
-              ))}
-            </div>
+            <Motion.div variants={reveal} className="holo-card">
+              <div className="holo-screen">
+                <span className="scan-line" />
+                <div className="screen-top">
+                  <span />
+                  <span />
+                  <span />
+                  <p>Automation Core</p>
+                </div>
+                <div className="circuit-visual">
+                  <div className="core-node"><FaRobot /></div>
+                  <span className="node node-a">WPF</span>
+                  <span className="node node-b">AI</span>
+                  <span className="node node-c">CI</span>
+                  <span className="node node-d">QA</span>
+                </div>
+                <div className="profile-lines">
+                  <p><b>Role</b> Automation Engineer & Team Lead</p>
+                  <p><b>Stack</b> WPF · FlAUI · C# · .NET · Selenium · SQL</p>
+                  <p><b>Impact</b> Stable releases, faster triage, fewer escapes</p>
+                </div>
+              </div>
+            </Motion.div>
           </Motion.div>
 
-          <div className="logo-constellation">
-            <div className="wormhole-visual" aria-hidden="true">
-              <video className="tool-matrix-video" src="/blackHole-card-1.webm" autoPlay muted loop playsInline />
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            {tools.map((tool) => (
-              <Motion.div
-                className={`tech-logo ${tool.className}`}
-                key={tool.name}
-                whileHover={{ y: -8, scale: 1.06 }}
-              >
-                {tool.icon}
-                <span>{tool.name}</span>
+          <div className="stats-row">
+            {stats.map((stat) => (
+              <Motion.div className="stat-card" key={stat.label} whileHover={{ y: -6 }}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
               </Motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="education" className="panel education-panel cyber-video-panel">
-        <CyberBackdrop />
-        <div className="education-visual" aria-hidden="true">
-          <span className="person person-one" />
-          <span className="person person-two" />
-          <span className="book book-one" />
-          <span className="book book-two" />
-        </div>
-        <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-          <p className="eyebrow">Education</p>
-          <h2>Academic foundation behind my engineering path.</h2>
-        </Motion.div>
-        <div className="education-list">
-          {education.map((item) => (
-            <Motion.article className="education-card" key={item.school} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <span className="education-logo">
-                <img src={item.logo} alt={item.logoAlt} />
-              </span>
-              <div>
-                <strong>{item.year}</strong>
-                <h3>{item.school}</h3>
-                <p>{item.degree}</p>
-              </div>
-            </Motion.article>
-          ))}
-        </div>
-      </section>
-
-      <section id="contact" className="panel contact-panel cyber-video-panel">
-        <CyberBackdrop />
-        <div className="contact-visual" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="contact-people" aria-hidden="true">
-          <span className="walking-person person-a" />
-          <span className="walking-person person-b" />
-          <span className="message-bubble bubble-a">Hello</span>
-          <span className="message-bubble bubble-b">Build?</span>
-        </div>
-        <Motion.div className="contact-card" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
-          <p className="eyebrow">Contact</p>
-          <h2>Ready to build automation that feels intelligent and reliable.</h2>
-          <div className="contact-links">
-            <a href="mailto:subbu.5531@gmail.com"><FaEnvelope /> subbu.5531@gmail.com</a>
-            <a href="https://www.linkedin.com/in/subramanya-n-732105129/" target="_blank" rel="noreferrer">
-              <FaLinkedin /> LinkedIn <FaExternalLinkAlt />
-            </a>
-            <span><FaMapMarkerAlt /> Bangalore, India</span>
+        <section id="experience" className="panel experience-panel">
+          <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <p className="eyebrow">Experience</p>
+            <h2>Where I've built, shipped and led.</h2>
+          </Motion.div>
+          <div className="experience-list">
+            {experiences.map((item) => (
+              <Motion.article className="experience-card" key={item.company} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
+                <div className="experience-meta">
+                  <span className="company-logo">
+                    <img src={item.logo} alt={item.logoAlt} />
+                  </span>
+                  <p>{item.period}</p>
+                  <h3>{item.role}</h3>
+                  <strong>{item.company}</strong>
+                </div>
+                <div className="experience-points">
+                  {item.points.map((point) => (
+                    <p key={point}>{point}</p>
+                  ))}
+                </div>
+              </Motion.article>
+            ))}
           </div>
-        </Motion.div>
-      </section>
-    </main>
+        </section>
+
+        <div className="section-divider-blackhole" aria-hidden="true">
+          <video className="blackhole-video" src="/blackHoleee-2.webm" autoPlay muted loop playsInline preload="metadata" />
+        </div>
+
+        <section id="projects" className="panel projects-panel">
+          <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <p className="eyebrow">Projects</p>
+            <h2>Systems, not just scripts.</h2>
+          </Motion.div>
+          <div className="project-grid">
+            {projects.map((project) => (
+              <Motion.article className="project-card" key={project.title} whileHover={{ y: -8 }} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+                <span className="project-icon">{project.icon}</span>
+                <p>{project.type}</p>
+                <h3>{project.title}</h3>
+                <span>{project.description}</span>
+                <div>
+                  {project.tags.map((tag) => <small key={tag}>{tag}</small>)}
+                </div>
+              </Motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="skills"
+          ref={skillsRef}
+          className={`panel skills-panel portal-section ${activePortal.skills ? "portal-active" : ""}`}
+        >
+          <div className="skill-blackhole" aria-hidden="true">
+            <video className="blackhole-video" src="/blackHoleee-2.webm" autoPlay muted loop playsInline preload="metadata" />
+            <span className="skill-orb orb-ai">AI</span>
+            <span className="skill-orb orb-net">.NET</span>
+            <span className="skill-orb orb-qa">QA</span>
+            <span className="skill-orb orb-csharp">C#</span>
+          </div>
+          <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <p className="eyebrow">Skills</p>
+            <h2>What I bring to the table.</h2>
+          </Motion.div>
+          <div className="skill-grid blackhole-pop-grid">
+            {skillGroups.map((group) => (
+              <Motion.article className="skill-card" key={group.title} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+                <div className="skill-title">
+                  <span>{group.icon}</span>
+                  <h3>{group.title}</h3>
+                </div>
+                {group.skills.map((skill) => (
+                  <div className="skill-row" key={skill.name} style={{ "--level": `${skill.level}%` }}>
+                    <div className="skill-info">
+                      <strong>{skill.name}</strong>
+                      <em>{skill.level}%</em>
+                    </div>
+                    <div className="skill-track">
+                      <span />
+                    </div>
+                  </div>
+                ))}
+              </Motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="tools"
+          ref={toolsRef}
+          className={`panel tools-panel tech-stack-panel cyber-video-panel portal-section ${activePortal.tools ? "portal-active" : ""}`}
+        >
+          <div className="tools-layout">
+            <Motion.div className="section-heading tools-copy" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+              <p className="eyebrow">Tools</p>
+              <h2>The stack I trust in production.</h2>
+              <p>
+                My stack is built around automation that holds up: stable object discovery,
+                readable test design, CI feedback that engineers actually act on, data validation,
+                and AI helpers that take the repetitive work off the team.
+              </p>
+              <div className="tool-insights">
+                {toolInsights.map((item) => (
+                  <article key={item.title}>
+                    <strong>{item.title}</strong>
+                    <span>{item.text}</span>
+                  </article>
+                ))}
+              </div>
+            </Motion.div>
+
+            <div className="logo-constellation">
+              <div className="wormhole-visual" aria-hidden="true">
+                <video className="tool-matrix-video" src="/blackHole-card-1.webm" autoPlay muted loop playsInline preload="metadata" />
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+              {tools.map((tool) => (
+                <Motion.div
+                  className={`tech-logo ${tool.className}`}
+                  key={tool.name}
+                  whileHover={{ y: -8, scale: 1.06 }}
+                >
+                  {tool.icon}
+                  <span>{tool.name}</span>
+                </Motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="education" className="panel education-panel">
+          <Motion.div className="section-heading" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <p className="eyebrow">Education</p>
+            <h2>The foundation behind the engineering.</h2>
+          </Motion.div>
+          <div className="education-list">
+            {education.map((item) => (
+              <Motion.article className="education-card" key={item.school} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+                <span className="education-logo">
+                  <img src={item.logo} alt={item.logoAlt} />
+                </span>
+                <div>
+                  <strong>{item.year}</strong>
+                  <h3>{item.school}</h3>
+                  <p>{item.degree}</p>
+                </div>
+              </Motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="panel contact-panel">
+          <Motion.div className="contact-card" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <p className="eyebrow">Contact</p>
+            <h2>Let's build automation that actually holds up.</h2>
+            <p className="contact-lede">
+              Open to roles, collaborations and conversations around automation engineering,
+              AI-assisted QA and team leadership.
+            </p>
+            <div className="contact-links">
+              <a href="mailto:subbu.5531@gmail.com"><FaEnvelope /> subbu.5531@gmail.com</a>
+              <a href="https://www.linkedin.com/in/subramanya-n-732105129/" target="_blank" rel="noreferrer">
+                <FaLinkedin /> LinkedIn <FaExternalLinkAlt />
+              </a>
+              <span><FaMapMarkerAlt /> Bangalore, India</span>
+            </div>
+          </Motion.div>
+        </section>
+      </main>
+    </>
   );
 }
 

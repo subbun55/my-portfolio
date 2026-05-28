@@ -28,11 +28,53 @@ a {
 }
 
 .portfolio-shell {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   color: #eef7ff;
+  background: transparent;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #050912;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.1s ease;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.bg-aurora {
+  filter: saturate(1.08) brightness(0.92);
+}
+
+.bg-cyber {
+  filter: saturate(1.05) brightness(0.7) contrast(1.05);
+}
+
+.bg-video.is-active {
+  opacity: 1;
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.16), transparent 28%),
-    linear-gradient(135deg, #020617, #07111f 46%, #020617);
+    radial-gradient(circle at 50% 0%, rgba(2, 6, 23, 0.45), transparent 55%),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.25) 0%, rgba(2, 6, 23, 0.35) 60%, rgba(2, 6, 23, 0.6) 100%);
+  pointer-events: none;
 }
 
 .site-nav {
@@ -87,41 +129,17 @@ a {
   min-height: 100vh;
   overflow: hidden;
   padding: 130px max(24px, calc((100vw - 1280px) / 2)) 90px;
+  background: transparent;
 }
 
-.panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -3;
-  background-size: cover;
+.panel::before,
+.panel::after {
+  display: none !important;
+  content: none;
 }
 
 .cyber-bg-video {
-  position: absolute;
-  inset: 0;
-  z-index: -4;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.78;
-  filter: contrast(1.08) saturate(1.12) brightness(0.72);
-  pointer-events: none;
-}
-
-.panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(125, 211, 252, 0.8) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.45) 1px, transparent 1.5px);
-  background-position: 0 0, 80px 120px, 160px 40px;
-  background-size: 210px 210px, 260px 260px, 320px 320px;
-  opacity: 0.38;
-  animation: starDrift 52s linear infinite;
+  display: none !important;
 }
 
 .hero-panel::before {
@@ -2336,4 +2354,160 @@ a {
   .project-card {
     transform: none !important;
   }
+}
+
+/* ============================================================
+   Video-background readability + perf overrides
+   Added when switching to a single shared fixed video layer.
+   ============================================================ */
+
+.experience-card,
+.project-card,
+.skill-card,
+.education-card,
+.contact-card,
+.stat-card {
+  background: linear-gradient(145deg, rgba(8, 18, 32, 0.72), rgba(4, 10, 20, 0.55));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.holo-card {
+  background: linear-gradient(145deg, rgba(8, 18, 32, 0.62), rgba(4, 10, 20, 0.4));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.holo-screen {
+  background:
+    linear-gradient(rgba(125, 211, 252, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 50% 42%, rgba(45, 212, 191, 0.22), transparent 28%),
+    rgba(7, 24, 39, 0.78);
+  background-size: 32px 32px, 32px 32px, 100% 100%, 100% 100%;
+}
+
+.contact-lede {
+  max-width: 640px;
+  margin: 22px auto 0;
+  color: #cfdfee;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero-proof-list span,
+.experience-points p,
+.profile-lines p,
+.skill-row {
+  background: rgba(4, 17, 29, 0.62);
+}
+
+.tool-insights article {
+  background: rgba(4, 17, 29, 0.7);
+}
+
+/* Hide leftover decoration elements that may still exist in CSS but are no longer rendered. */
+.aurora-scene,
+.space-objects,
+.hero-feature-strip,
+.moon-glow,
+.mountain,
+.contact-visual,
+.contact-people,
+.walking-person,
+.message-bubble,
+.education-visual,
+.project-edge-blackhole {
+  display: none !important;
+}
+
+/* Full blackhole between Experience and Projects.
+   Sized so the visible circle diameter matches the skills half-blackhole arc width. */
+.section-divider-blackhole {
+  position: relative;
+  z-index: 5;
+  width: min(560px, 48vw);
+  height: 360px;
+  margin: -180px auto;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(
+    ellipse 62% 72% at center,
+    #000 0%,
+    rgba(0, 0, 0, 0.82) 36%,
+    rgba(0, 0, 0, 0.3) 68%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 62% 72% at center,
+    #000 0%,
+    rgba(0, 0, 0, 0.82) 36%,
+    rgba(0, 0, 0, 0.3) 68%,
+    transparent 100%
+  );
+}
+
+.section-divider-blackhole .blackhole-video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  border-radius: 0;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  filter: contrast(1.18) saturate(1.12) brightness(1.12);
+}
+
+
+/* Skills blackhole: half-blackhole peeking from the top edge of the section.
+   Container sits at top: 0, video is transformed so its center lines up with the seam —
+   the top half is clipped by the panel overflow, leaving a clean half-circle below. */
+.skill-blackhole {
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  z-index: 0 !important;
+  width: min(1100px, 78vw) !important;
+  height: 320px !important;
+  margin: 0 !important;
+  transform: translateX(-50%) !important;
+  pointer-events: none;
+  overflow: visible !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.skill-blackhole .blackhole-video {
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 360px !important;
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  transform: translate(-50%, -50%) scale(1.02) !important;
+  opacity: 0.92 !important;
+  mix-blend-mode: screen;
+  filter: contrast(1.18) saturate(1.12) brightness(1.1);
+  -webkit-mask-image: radial-gradient(
+    ellipse 65% 90% at 50% 50%,
+    #000 0%,
+    rgba(0, 0, 0, 0.78) 42%,
+    transparent 78%
+  ) !important;
+  mask-image: radial-gradient(
+    ellipse 65% 90% at 50% 50%,
+    #000 0%,
+    rgba(0, 0, 0, 0.78) 42%,
+    transparent 78%
+  ) !important;
+}
+
+/* Performance: hint the compositor for the bg videos only. */
+.bg-video {
+  transform: translateZ(0);
 }
